@@ -5,9 +5,9 @@
 
 _server = '195.57.30.196'
 #_server = 'vidreo.ddns.net'
-_database = 'contratosmenores'
-_username = 'pcsp_user'
-_password = 'Fualsa123!'
+_database = 'portal_contratacion'
+_username = 'portal_contrataciondba'
+_password = 'Tm@s8+En-z..}'
 _port='20043'
 
 engine_string = 'mysql+mysqlconnector://'+_username+':'+_password+'@'+_server+':'+_port+'/'+_database
