@@ -1,5 +1,8 @@
 
 
+
+
+
 _server = '195.57.30.196'
 #_server = 'vidreo.ddns.net'
 _database = 'contratosmenores'
@@ -18,4 +21,7 @@ cnxn_string = {
 }
 
 import PCSP_plataformacontratacionsectorpublico
+start_plataformacontratacionsectorpublico(cnxn_string,engine_string)
+
 import PCSP_contratosmenores
+start_contratosmenores(cnxn_string,engine_string)

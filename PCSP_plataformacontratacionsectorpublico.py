@@ -1133,7 +1133,7 @@ test_connector(cnxn_string)
 # In[8]:
 
 
-def Normalize_atom(url):
+def Normalize_atom(url,engine_string):
     
     
     start_time = time.time()                                                                     # Marcamos la hora de inicio
@@ -1270,15 +1270,15 @@ def Normalize_atom(url):
 
 # In[ ]:
 
-
-UrlFin = 'https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom'
-try:
-    url = last_URL(UrlFin,cnxn_string)
-except:
-    url = "https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20200607_131257_3.atom"
-while url != UrlFin:
-    url_next = Normalize_atom(url)
-    url = url_next
+def start_plataformacontratacionsectorpublico(cnxn_string,engine_string):
+    UrlFin = 'https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom'
+    try:
+        url = last_URL(UrlFin,cnxn_string)
+    except:
+        url = "https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20200607_131257_3.atom"
+    while url != UrlFin:
+        url_next = Normalize_atom(url,engine_string)
+        url = url_next
 
 
 # In[ ]:
