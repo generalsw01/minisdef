@@ -21,7 +21,6 @@ cnxn_string = {
 }
 
 import PCSP_plataformacontratacionsectorpublico
-PCSP_plataformacontratacionsectorpublico.start_plataformacontratacionsectorpublico(cnxn_string,engine_string)
+
 
 import PCSP_contratosmenores
-PCSP_contratosmenores.start_contratosmenores(cnxn_string,engine_string)

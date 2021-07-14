@@ -16,7 +16,22 @@ from datetime import datetime
 import mysql.connector
 from mysql.connector import errorcode
 
+_server = '195.57.30.196'
+#_server = 'vidreo.ddns.net'
+_database = 'portal_contratacion'
+_username = 'portal_contrataciondba'
+_password = 'Tm@s8+En-z..}'
+_port='20043'
 
+engine_string = 'mysql+mysqlconnector://'+_username+':'+_password+'@'+_server+':'+_port+'/'+_database
+cnxn_string = {
+  'user': _username,
+  'password': _password,
+  'host': _server,
+  'database': _database,
+  'port':_port,
+  'raise_on_warnings': True
+}
 
 def fc_licitaciones (entry):
     
@@ -1257,15 +1272,15 @@ def Normalize_atom(url,engine_string):
 
 # In[ ]:
 
-def start_plataformacontratacionsectorpublico(cnxn_string,engine_string):
-    UrlFin = 'https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom'
-    try:
-        url = last_URL(UrlFin,cnxn_string)
-    except:
-        url = "https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20200607_131257_3.atom"
-    while url != UrlFin:
-        url_next = Normalize_atom(url,engine_string)
-        url = url_next
+
+UrlFin = 'https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom'
+try:
+    url = last_URL(UrlFin,cnxn_string)
+except:
+    url = "https://contrataciondelestado.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20200607_131257_3.atom"
+while url != UrlFin:
+    url_next = Normalize_atom(url,engine_string)
+    url = url_next
 
 
 # In[ ]:
