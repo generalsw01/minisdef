@@ -22,5 +22,3 @@ cnxn_string = {
 
 import PCSP_plataformacontratacionsectorpublico
 
-
-import PCSP_contratosmenores
